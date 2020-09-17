@@ -32,7 +32,7 @@ frameToRules <- function(model){
   antItems <- unique(unlist(sapply(rowItems, function(x) x$ant)))
   consItems <- unique(unlist(sapply(rowItems, function(x) x$cons)))
   # all items
-  items <- c(antItems, consItems)
+  items <- unique(c(antItems, consItems))
   # prepare matrices for antecedents(lhs) and consequents(rhs)
   antM <- matrix(0, ncol=length(items), nrow = nrow(model))
   dimnames(antM) <- list(NULL, items)
